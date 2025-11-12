@@ -1,75 +1,70 @@
-# React + TypeScript + Vite
+# Phrase Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Esta es una aplicación web adaptativa creada con React y TypeScript que te permite crear, administrar y buscar tu colección personal de frases o notas. La aplicación cuenta con una interfaz limpia y moderna con modos claro y oscuro, y almacena todos los datos en el almacenamiento local de tu navegador.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características
 
-## React Compiler
+*   **Agregar frases**: Agregue rápidamente nuevas frases con un límite de caracteres.
+*   **Búsqueda**: Filtra tus frases en tiempo real con una entrada de búsqueda sin rebote.
+*   **Eliminar frases**: Elimina frases con una animación de salida suave.
+*   **Almacenamiento persistente**: Tus frases y preferencias de tema se guardan en localStorage, por lo que tus datos persisten entre sesiones del navegador.
+*   **Cambio de tema**: Cambia entre un tema claro y uno oscuro según tus preferencias.
+*   **Diseño responsivo**: Un diseño pensado para dispositivos móviles que se adapta a tabletas y computadoras de escritorio.
+*   **Estados vacíos**: Mensajes informativos cuando no hay frases o resultados de búsqueda.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Tech Stack
 
-Note: This will impact Vite dev & build performances.
+*   **Framework**: React 19
+*   **Language**: TypeScript
+*   **Build Tool**: Vite
+*   **State Management**: Zustand
+*   **Styling**: CSS Modules
+*   **Testing**: Vitest, React Testing Library, JSDOM
+*   **Icons**: Custom SVG components
 
-## Expanding the ESLint configuration
+## Introducción
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Para ejecutar este proyecto localmente, siga estos pasos.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Requisitos previos
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Asegúrese de tener Node.js y npm (o un administrador de paquetes similar) instalados en su máquina.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Instalación
+
+1. Clona el repositorio en tu máquina local:
+    ```bash
+    git clone https://github.com/emasar91/challenge-frases.git
+    ```
+
+2.  Navega hasta el directorio del proyecto:
+    ```bash
+    cd challenge-frases
+    ```
+
+3.  Instala las dependencias necesarias:
+    ```bash
+    npm install
+    ```
+
+### Ejecutar la aplicación
+
+Para iniciar el servidor de desarrollo, ejecute el siguiente comando:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+La aplicación estará disponible en `http://localhost:5173` (o el siguiente puerto disponible)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts disponibles
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project includes several scripts to help with development and testing:
+
+*   `npm run dev`: Inicia el servidor de desarrollo con Hot Module Replacement (HMR).
+*   `npm run build`: Compila y agrupa la aplicación para su producción.
+*   `npm run lint`: Comprueba el código base utilizando ESLint para encontrar y solucionar problemas.
+*   `npm run preview`: Sirve la compilación de producción localmente para obtener una vista previa de la aplicación final.
+*   `npm run test`: Ejecuta el conjunto de pruebas en la consola.
+*   `npm run test:ui`: Ejecuta el conjunto de pruebas con la interfaz de usuario interactiva Vitest.
