@@ -37,9 +37,7 @@ describe('Header', () => {
 	it('renderiza correctamente el título y el subtítulo', () => {
 		render(<Header />)
 		expect(screen.getByText(/Gestor de Frases/i)).toBeInTheDocument()
-		expect(
-			screen.getByText(/Crea, busca y organiza tus frases favoritas/i)
-		).toBeInTheDocument()
+		expect(screen.getByText(/Crea, busca tus frases/i)).toBeInTheDocument()
 	})
 
 	it('muestra el texto correcto según el tema actual', () => {
