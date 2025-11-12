@@ -1,0 +1,101 @@
+.card {
+	background: linear-gradient(
+		to bottom right,
+		var(--color-card-bg),
+		var(--color-bg-input)
+	);
+	border-radius: 1rem;
+	padding: 1.5rem;
+	border: 1px solid var(--color-border);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
+	transform: translateY(0);
+	max-width: 100%;
+	display: flex;
+	flex: 1;
+	flex-grow: 1;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+	.card {
+		width: 88%;
+	}
+}
+
+@keyframes cardFadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes cardFadeOut {
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+}
+
+.enter {
+	animation: cardFadeIn 0.3s ease forwards;
+}
+
+.exit {
+	animation: cardFadeOut 0.3s ease forwards;
+}
+
+.card:hover {
+	border-color: var(--color-primary);
+	transform: scale(1.03);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.text {
+	max-width: fit-content;
+	color: var(--color-text);
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 1.6;
+	margin-bottom: 1rem;
+	display: -webkit-box;
+	word-break: break-all;
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 1rem;
+	border-top: 1px solid var(--color-border);
+}
+
+.date {
+	font-size: 0.75rem;
+	color: var(--color-placeholder);
+}
+
+.deleteButton {
+	background-color: transparent;
+	border: none;
+	color: #f87171;
+	border-radius: 0.5rem;
+	padding: 0.25rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.deleteButton:hover {
+	background-color: #ef4444;
+	color: white;
+	transform: scale(1.1);
+}
